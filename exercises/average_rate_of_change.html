@@ -9,19 +9,19 @@
               <div class="vars" data-ensure="X1<X2">
               	  <var id="FCOEFF">randRangeExclude(-5,5,[0,1])</var>
               	  <var id="FPLUS">randRangeExclude(1,9,0)</var>
-              	  <var id= "FSQUARE">function(x){return FCOEFF*Math.pow(x,2)+FPLUS;}</var>
-              	  <var id= "FLINEAR">function(x){return FCOEFF*x+FPLUS;}</var>
-                  <var id= "X1">randRange(-5,5)</var>
-                  <var id= "X2">randRange(-5,5)</var>
+              	  <var id="FSQUARE">function(x){return FCOEFF*Math.pow(x,2)+FPLUS;}</var>
+              	  <var id="FLINEAR">function(x){return FCOEFF*x+FPLUS;}</var>
+                  <var id="X1">randRange(-5,5)</var>
+                  <var id="X2">randRange(-5,5)</var>
               </div>
 
               <div class="problems">
                   <div id="function-squared">
-                  	  <div class= "vars">                  	  	  
-                		  <var id= "Y1">FSQUARE(X1)</var>
-                		  <var id= "Y2">FSQUARE(X2)</var>
-                		  <var id= "XDIF">X2-X1</var>
-                		  <var id= "YDIF">Y2-Y1</var>
+                  	  <div class="vars">                  	  	  
+                		  <var id="Y1">FSQUARE(X1)</var>
+                		  <var id="Y2">FSQUARE(X2)</var>
+                		  <var id="XDIF">X2-X1</var>
+                		  <var id="YDIF">Y2-Y1</var>
                 		  <var id="M">YDIF / XDIF</var>
                   	  </div>
                       <p class="problem">What is the average rate of change of the following question?<!-- An overview of the problem including all needed info. --></p>
@@ -41,11 +41,11 @@
 		              </div>
                   </div>
                   <div id="function-linear">
-                  	  <div class= "vars">                  	  	  
-                		  <var id= "Y1">FLINEAR(X1)</var>
-                		  <var id= "Y2">FLINEAR(X2)</var>
-                		  <var id= "XDIF">X2-X1</var>
-                		  <var id= "YDIF">Y2-Y1</var>
+                  	  <div class="vars">                  	  	  
+                		  <var id="Y1">FLINEAR(X1)</var>
+                		  <var id="Y2">FLINEAR(X2)</var>
+                		  <var id="XDIF">X2-X1</var>
+                		  <var id="YDIF">Y2-Y1</var>
                 		  <var id="M">YDIF / XDIF</var>
                   	  </div>
                       <p class="problem">What is the average rate of change of the following question?<!-- An overview of the problem including all needed info. --></p>
@@ -65,17 +65,17 @@
 		              </div>
                   </div>
                   <div id="graph-question">
-                  	  <div class= "vars">
-                  	  	  <var id= "X1">-5</var> 
-                  	  	  <var id= "X2">7</var>           	  	  
-                		  <var id= "Y1">-2</var>
-                		  <var id= "Y2">6</var>
-                		  <var id= "XDIF">X2-X1</var>
-                		  <var id= "YDIF">Y2-Y1</var>
+                  	  <div class="vars">
+                  	  	  <var id="X1">-5</var> 
+                  	  	  <var id="X2">7</var>           	  	  
+                		  <var id="Y1">-2</var>
+                		  <var id="Y2">6</var>
+                		  <var id="XDIF">X2-X1</var>
+                		  <var id="YDIF">Y2-Y1</var>
                 		  <var id="M">YDIF / XDIF</var>
 	                  </div>                  	  
                       <div class="problem"> <!-- The question to ask the student. -->                      	  
-		             	  <p class= "question">What is the average rate of change of the following function?</p>
+		             	  <p class="question">What is the average rate of change of the following function?</p>
 	                      <div class="graphie" id="GRAPH">
 		                    graphInit({
 		                        range: 10,
@@ -83,8 +83,8 @@
 		                        tickStep: 1,
 		                        labelStep: 1,
 		                        unityLabels: false,
-		                        labelFormat: function( s ) { return "\\small{" + s + "}"; },
-		                        axisArrows: "<->"
+		                        labelFormat: function( s ) { return"\\small{" + s +"}"; },
+		                        axisArrows:"<->"
 		                    });
 
 		                    path( [[X1,Y1], [-3,0], [0,-3],[2,4], [6,5], [X2,Y2]]);
@@ -110,14 +110,14 @@
 		              </div>
                   </div>
                   <div id="graph-question-TWO" data-type="graph-question">
-                  	  <div class= "vars">
-                  	  	  <var id= "X1">-9</var> 
-                  	  	  <var id= "X2">4</var>           	  	  
-                		  <var id= "Y1">6</var>
-                		  <var id= "Y2">-8</var>
+                  	  <div class="vars">
+                  	  	  <var id="X1">-9</var> 
+                  	  	  <var id="X2">4</var>           	  	  
+                		  <var id="Y1">6</var>
+                		  <var id="Y2">-8</var>
 	                  </div>                  	  
                       <div class="problem"> <!-- The question to ask the student. -->                      	  
-		             	  <p class= "question">What is the average rate of change of the following function?</p>
+		             	  <p class="question">What is the average rate of change of the following function?</p>
 	                      <div class="graphie" id="GRAPH">
 		                    graphInit({
 		                        range: 10,
@@ -125,8 +125,8 @@
 		                        tickStep: 1,
 		                        labelStep: 1,
 		                        unityLabels: false,
-		                        labelFormat: function( s ) { return "\\small{" + s + "}"; },
-		                        axisArrows: "<->"
+		                        labelFormat: function( s ) { return"\\small{" + s +"}"; },
+		                        axisArrows:"<->"
 		                    });
 
 		                    path( [[X1,Y1], [-7,0], [-4,-2],[-2,0], [0,-2], [X2,Y2]]);
