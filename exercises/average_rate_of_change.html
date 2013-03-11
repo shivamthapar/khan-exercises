@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html data-require="math graphie">
+  <html data-require="math graphie polynomials">
       <head>
           <title>Average Rate of Change of a Function</title>
           <script src="../khan-exercise.js"></script>
@@ -7,41 +7,16 @@
       <body>
           <div class="exercise">
               <div class="vars" data-ensure="X1<X2">
-              	  <var id="FCOEFF">randRangeExclude(-5,5,[0,1])</var>
-              	  <var id="FPLUS">randRangeExclude(1,9,0)</var>
-              	  <var id="FSQUARE">function(x){return FCOEFF*Math.pow(x,2)+FPLUS;}</var>
-              	  <var id="FLINEAR">function(x){return FCOEFF*x+FPLUS;}</var>
                   <var id="X1">randRange(-5,5)</var>
                   <var id="X2">randRange(-5,5)</var>
               </div>
 
               <div class="problems">
-                  <div id="function-squared">
+                  <div id="function-linear" data-weight= "4">
                   	  <div class="vars">                  	  	  
-                		  <var id="Y1">FSQUARE(X1)</var>
-                		  <var id="Y2">FSQUARE(X2)</var>
-                		  <var id="XDIF">X2-X1</var>
-                		  <var id="YDIF">Y2-Y1</var>
-                		  <var id="M">YDIF / XDIF</var>
-                  	  </div>
-                      <p class="problem">What is the average rate of change of the following question?<!-- An overview of the problem including all needed info. --></p>
-                      <p class="question"><code>f(x)=<var>FCOEFF</var>x^2+<var>FPLUS</var></code> between <code>x=<var>X1</var></code> and <code>x=<var>X2</var></code> <!-- The question to ask the student. --></p>
-                      <p class="solution"><var>M</var><!-- The correct answer expected of the student. --></p>
-                      <div class="hints">
-		              	  <p>Average rate of change=<code>\frac{f(b)-f(a)}{b-a}</code></p>
-		              	  <p>
-		              	  	<code>
-		              	  		\frac{f(<var>X2</var>)-f(<var>X1</var>)}{<var>X2</var>-<var>X1</var>}
-		              	  		=\frac{<var>Y2</var>-<var>Y1</var>}{<var>X2</var>-<var>X1</var>}=<var>M</var>
-		              	  	</code>              	  
-		              	  </p>
-		              	  <p>The average rate of change of the function is <code><var>M</var></code></p>
-
-		                  <!-- Any hints to show to the student. -->
-		              </div>
-                  </div>
-                  <div id="function-linear">
-                  	  <div class="vars">                  	  	  
+		              	  <var id="FCOEFF1">randRangeExclude(-5,5,[0,1])</var>
+		              	  <var id="FCOEFF0">randRangeExclude(1,9,0)</var> 
+		              	  <var id="FLINEAR">function(x){return FCOEFF1*x+FCOEFF0;}</var>                   	  	  
                 		  <var id="Y1">FLINEAR(X1)</var>
                 		  <var id="Y2">FLINEAR(X2)</var>
                 		  <var id="XDIF">X2-X1</var>
@@ -49,7 +24,7 @@
                 		  <var id="M">YDIF / XDIF</var>
                   	  </div>
                       <p class="problem">What is the average rate of change of the following question?<!-- An overview of the problem including all needed info. --></p>
-                      <p class="question"><code>f(x)=<var>FCOEFF</var>x+<var>FPLUS</var></code> between <code>x=<var>X1</var></code> and <code>x=<var>X2</var></code> <!-- The question to ask the student. --></p>
+                      <p class="question"><code>f(x)=<var>FCOEFF1</var>x+<var>FCOEFF0</var></code> between <code>x=<var>X1</var></code> and <code>x=<var>X2</var></code> <!-- The question to ask the student. --></p>
                       <p class="solution"><var>M</var><!-- The correct answer expected of the student. --></p>
                       <div class="hints">
 		              	  <p>Average rate of change=<code>\frac{f(b)-f(a)}{b-a}</code></p>
@@ -64,7 +39,60 @@
 		                  <!-- Any hints to show to the student. -->
 		              </div>
                   </div>
-                  <div id="graph-question">
+                  <div id="function-squared" data-weight= "2">
+                  	  <div class="vars">  
+                  	  	  <var id="FCOEFF1">randRangeExclude(-5,5,[0,1])</var>
+		              	  <var id="FCOEFF0">randRangeExclude(1,9,0)</var> 
+                  	  	  <var id="FCOEFF2">randRangeExclude(-3,3,[0,1])</var>
+		              	  <var id="FSQUARE">function(x){return FCOEFF2*Math.pow(x,2)+FCOEFF1*x+FCOEFF0;}</var>		              	  
+                		  <var id="y1">FSQUARE(X1)</var>
+                		  <var id="y2">FSQUARE(X2)</var>
+                		  <var id="xdif">x2-x1</var>
+                		  <var id="ydif">y2-y1</var>
+                		  <var id="m">ydif / xdif</var>
+                  	  </div>
+                      <p class="question"><code>f(x)=<var>FCOEFF2</var>x^2+<var>FCOEFF1</var>x+<var>FCOEFF0</var></code> between <code>x=<var>X1</var></code> and <code>x=<var>X2</var></code> <!-- The question to ask the student. --></p>
+                      <div class="hints">
+		              	  <p>Average rate of change=<code>\frac{f(b)-f(a)}{b-a}</code></p>
+		              	  <p>
+		              	  	<code>
+		              	  		\frac{f(<var>X2</var>)-f(<var>X1</var>)}{<var>X2</var>-<var>X1</var>}
+		              	  		=\frac{<var>Y2</var>-<var>Y1</var>}{<var>X2</var>-<var>X1</var>}=<var>M</var>
+		              	  	</code>              	  
+		              	  </p>
+		              	  <p>The average rate of change of the function is <code><var>M</var></code></p>
+
+		                  <!-- Any hints to show to the student. -->
+		              </div>
+	               </div>
+	               <div id="function-cubed" data-weight= "1">
+                  	  <div class="vars">  
+                  	 	  <var id="FCOEFF3">randRangeExclude(-2,2,[0,1])</var> 
+                  	  	  <var id="FCOEFF2">randRangeExclude(-3,3,[0,1])</var>
+                  	  	  <var id="FCOEFF1">randRangeExclude(-3,3,[0,1])</var>
+		              	  <var id="FCOEFF0">randRangeExclude(2,9,0)</var>
+		              	  <var id="FCUBE">function(x){return FCOEFF3*Math.pow(x,3)+FCOEFF2*Math.pow(x,2)+FCOEFF1*x+FCOEFF0;}</var>		              	  
+                		  <var id="Y1">FCUBE(X1)</var>
+                		  <var id="Y2">FCUBE(X2)</var>
+                		  <var id="XDIF">X2-X1</var>
+                		  <var id="YDIF">Y2-Y1</var>
+                		  <var id="M">YDIF/XDIF</var>
+                  	  </div>
+                      <p class="question"><code>f(x)=<var>FCOEFF3</var>x^3+<var>FCOEFF2</var>x^2+<var>FCOEFF1</var>x+<var>FCOEFF0</var></code> between <code>x=<var>X1</var></code> and <code>x=<var>X2</var></code> <!-- The question to ask the student. --></p>
+                      <div class="hints">
+		              	  <p>Average rate of change=<code>\frac{f(b)-f(a)}{b-a}</code></p>
+		              	  <p>
+		              	  	<code>
+		              	  		\frac{f(<var>X2</var>)-f(<var>X1</var>)}{<var>X2</var>-<var>X1</var>}
+		              	  		=\frac{<var>Y2</var>-<var>Y1</var>}{<var>X2</var>-<var>X1</var>}=<var>M</var>
+		              	  	</code>              	  
+		              	  </p>
+		              	  <p>The average rate of change of the function is <code><var>M</var></code></p>
+
+		                  <!-- Any hints to show to the student. -->
+		              </div>
+	               </div>
+                  <div id="graph-question" data-weight="1">
                   	  <div class="vars">
                   	  	  <var id="X1">-5</var> 
                   	  	  <var id="X2">7</var>           	  	  
@@ -109,7 +137,7 @@
 		                  <!-- Any hints to show to the student. -->
 		              </div>
                   </div>
-                  <div id="graph-question-TWO" data-type="graph-question">
+                  <div id="graph-question-TWO" data-type="graph-question"  data-weight="1">
                   	  <div class="vars">
                   	  	  <var id="X1">-9</var> 
                   	  	  <var id="X2">4</var>           	  	  
